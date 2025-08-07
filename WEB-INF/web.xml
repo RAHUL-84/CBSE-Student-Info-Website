@@ -1,0 +1,29 @@
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+version="3.0">
+<context-param>
+<param-name>driver</param-name>
+<param-value>oracle.jdbc.driver.OracleDriver</param-value>
+</context-param>
+<context-param>
+<param-name>url</param-name>
+<param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
+</context-param>
+<context-param>
+<param-name>user</param-name>
+<param-value>system</param-value>
+</context-param>
+<context-param>
+<param-name>pass</param-name>
+<param-value>mca6</param-value>
+</context-param>
+<servlet>
+<servlet-name>AddStudent</servlet-name>
+<servlet-class>AddStudent</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>AddStudent</servlet-name>
+<url-pattern>/AddStudent</url-pattern>
+</servlet-mapping>
+</web-app>

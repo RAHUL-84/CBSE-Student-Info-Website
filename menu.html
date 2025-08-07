@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBSE Student Management System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e5799 0%,#207cca 51%,#2989d8 100%);
+            color: white;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            margin-bottom: 40px;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        h1 {
+            font-size: 2em;
+            margin: 0 0 0 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .subtitle {
+            font-size: 1em;
+            margin-top: 5px;
+            font-weight: 300;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .action-button {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #1e5799;
+            border: none;
+            padding: 10px 15px;
+            font-size: 0.9em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+        }
+        
+        .action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            background-color: white;
+        }
+        
+        .logout-button {
+            background-color: rgba(255, 99, 71, 0.9);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 0.9em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+        
+        .logout-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            background-color: #ff6347;
+        }
+        
+        .action-button i, .logout-button i {
+            font-size: 1em;
+            margin-right: 8px;
+        }
+        
+        .logo {
+            height: 50px;
+        }
+        
+        .main-content {
+            text-align: center;
+            padding: 50px 0;
+        }
+        
+        .welcome-message {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+        
+        footer {
+            margin-top: 60px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            font-size: 0.9em;
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="https://i.pinimg.com/474x/44/58/2e/44582e90a74c1ad37fb73700d30cb705.jpg" alt="CBSE Logo" class="logo">
+                <div>
+                    <h1>CBSE Student Management</h1>
+                    <div class="subtitle">  Demo Management System</div>
+                </div>
+            </div>
+            
+            <div class="nav-buttons">
+                <button class="action-button" onclick="location.href='AddStudent.html'">
+                    <i class="fas fa-user-plus"></i>
+                    Add
+                </button>
+                
+                <button class="action-button" onclick="location.href='RemoveStudent.html'">
+                    <i class="fas fa-user-minus"></i>
+                    Remove
+                </button>
+                
+                <button class="action-button" onclick="callSearchStudentServlet()">
+                    <i class="fas fa-search"></i>
+                    Search
+                </button>
+                
+                <button class="action-button" onclick="callViewStudentsServlet()">
+                    <i class="fas fa-users"></i>
+                    View
+                </button>
+                
+                <button class="logout-button" onclick="location.href='index.html'">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+            </div>
+        </header>
+        
+        <div class="main-content">
+            <div class="welcome-message">
+                Welcome to CBSE Student Management Portal
+            </div>
+            <p>Made By RAHUL Under The Guidence Of <h2> Mr. Manish Bhatia Sir </h2></p>
+        </div>
+        
+        <footer>
+            <p>© 2023 Central Board of Secondary Education (CBSE) | Student Management System</p>
+            <p>For official use only | Version 2.1</p>
+        </footer>
+    </div>
+
+    <script>
+        function callViewStudentsServlet() {
+            // Using GET request to the servlet
+            window.location.href = 'viewStudents';
+        }
+        
+        function callSearchStudentServlet() {
+            // Using GET request to the searchStudent1 servlet
+            window.location.href = 'searchStudent2';
+            
+            // Alternatively, if you need to use POST:
+            /*
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = 'searchStudent1';
+            document.body.appendChild(form);
+            form.submit();
+            */
+        }
+    </script>
+</body>
+</html>
